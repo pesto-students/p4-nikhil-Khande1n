@@ -30,17 +30,25 @@ When a user enters an URL in the browser, how does the browser fetch the desired
 
 ## Explanation
 What is a web browser? 
-In simple terms, a web browser is a software tool which helps us view webpages, images, videos etc over the internet in an user friendly manner.
+In simple terms, a web browser is a software tool which helps a user view webpages, images etc over the internet in an user friendly manner with the help of its User Interface.
 There are many popular web browser like Chrome, Safari, Firefox, Opera etc. 
 
 How a typical browser works?
 We open the browser in our devices which are connected to the internet, enter a URL (Unifrom Resource Locator) in the address bar and click enter. What we see next is a beautiful website opens up in the browser and we are able to scroll and interact with it. But have we ever wondered how does this works behind the scenes.
 
-To understand it, let's deep dive a little.
+## Let's see in detail, how these browser works:
+When a URL is typed in a browser and submitted, then 
+1. browser sends a request to DNS (Domain Name Server), which is a directory which maps domain name to server IP address, to get IP address of the requested server
+2. Once the browser receives this IP address, then Networking Layer sends a HTTP (HyperText Transfer Protocol) request to the server over TCP/IP protocol over the internet.
+HTTP/HTTPS protocal is a way in which client and server talk to each other
+TCP/IP is a protocol over which data is transferred over the web
+3. If the server accepts the request sent by the browser, it returns status code '200' and requested resources are shared in small chunks of pieces, typically 8kB size.
+4. The browser on receiving the data, browser on parsing HTML structure, CSS styles and JS scripts, render the website/image/content on the browser
 
-<img src="../assests/how_browser_works.png></img>
+### Key Components of a web browser
+<img src="../assests/how_browser_works.png>
 
-### What are key components of a web browser?
+# List of components
 1. User Interface
 2. Browser Engine
 3. Rendering Engine
@@ -50,32 +58,51 @@ To understand it, let's deep dive a little.
 7. Data Persistence
 
 ### User Interface
-Example of User Interface of a browser is next, back, refresh, stop, setting etc. In other words, anything that we cannot manuplate in the browser is part of the user interface.
+It is that component of a browser, which is visible to user before even entering any resource URL. Example of User Interface of a browser is the address bar, Next, Back, Refresh, Stop, Setting button etc. This can also be framed in another way, which is, anything that a user cannot manuplate in the browser is part of the user interface.
 
 ### Browser Engine
-It servers a mediator between Rendering Engine and User Interface
+Every browser has its own engine. This compoenent of the browser act as a mediator between User Interface and Rendering Engine. It queries and convey commands from browser's User Interface to Rendering Engine.
 
 ### Rendering Engine
-Rendering engine is responsible for the rendering of the resource (generally a webpage, image etc) by fetching the resources, parsing them and giving instruction to the browser what and how to render the final output.
+This component is responsible for the rendering of the resource requested by the user, a webpage, image etc. by fetching the resources from the networking layer. Then parsing the HTML and create the DOM Tree. Parallely, it parse CSS files from stylesheets and create CSSOM Tree. Javascript Interpretor parse the fetched JS scripts and then the engine creates Render Tree. This render tree then goes to Layout and then Painting. With the help of UI backend, paint function of the underlying operating system is called and browser then paints the final output which is visible to user.
+Some of the few Browser Engine are:
+- For Chrome - Blink
+- For Firefox Mozilla - Gecko
+- Chrome for iOS & Safari - Webkit
+- Internet Explorer - Trident
 
 ### Networking
-This Networking component is responsible for getting the IP (Internet Protocol) Address of the web page and then get the resources over the internet.
+The Networking component is responsible for all the HTTP requests which the rendering engine gives to this layer. This includes getting the IP (Internet Protocol) Address of the document, fetch resources over the internet.
 
 ### JavaScript Interpretor
-This component is responsible for parsing the JS scripts
+This component is responsible for parsing the JS scripts and update the rendering engine of the same.
 
 ### UI Backend
-Once the Rendering engine finishes parsing and ready with the output, UI Backend then renders the final output on the User Interface of the browser
+Once the Rendering engine finishes parsing and ready with the output, UI Backend then renders the final output on the User Interface of the browser with the help of paint function of the operating system the browser is running.
 
 ### Data Persistence
-This component is responsible for persisting(saving) the data on the browser in the form of cookies. There are various options available like IndexedDB, FileSystem, LocalStorage, Web SQL etc. Cookie can be used to save user credentials, data about past visit, website we visit etc
+This component is responsible for persisting(saving) the data on the browser about the user, one such form in the form of cookies. There are various options available like IndexedDB, FileSystem, LocalStorage, Web SQL etc. Cookies can be used to save user credentials, data about past visit, website we visit etc.
 
 
-Let's see in detail, how these compoent works:
-When a URL is typed in a browser and submitted, then 
-1. browser sends a request to DNS (Domain Name Server), which is a directory which maps domain name to server IP address, to get IP address of the requested server
-2. Once the browser receives this IP address, then Networking Layer sends a HTTP (HyperText Transfer Protocol) request to the server over TCP/IP protocol over the internet.
-HTTP/HTTPS protocal is a way in which client and server talk to each other
-TCP/IP is a protocol over which data is transferred over the web
-3. If the server accepts the request sent by the browser, it returns status code '200' and requested resources are shared in small chunks of pieces, typically 8kB size.
-4. The browser on receiving the data, browser on parsing HTML structure, CSS styles and JS scripts, render the website/image/content on the browser
+### Rendering is a key part what browser works. Let's deep dive
+Rendering engine get all the resources through the HTTP/HTTPS calls over internet via networking layer. The below diagram tell the workflow of the rendering engine - 
+
+<img src="../assests/rendering_engine_workflow.png">
+
+As soon as this engine starts receiving the document, the HTML parser tokenizes the elements, which contains start tag , end tag, attributes and values, into a DOM Tree. The HTML parser does this via two key process:
+- Lexical Analysis - it tokenizes the documents
+- Syntax Analysis - it applies language specific syntax
+
+<img src="../assests/lexer-parser.pmg">
+
+The parser keeps asking the Lexer for the token and keep those in the memory, and as soon as it gets something connected to token in memory, creates the tree.
+
+The process of creation of tree goes on even when the parser gets CSS elements through various style sheets. With the CSS elements, parser creates CSSOM tree and the render engine then creates a Render Tree based on them. 
+
+'<script/>' tag can block the parsing of HTML and stop the rendering process, if 'async' or 'defer' attribute not mentioned. JS interpretation is done during compile time or whenever a parser is invoked. Please see the image below:
+<img src="../assests/scripts_updating_token.png">
+
+Now the rendering engine with the help of both DOM and CSSOM, creates a Render Tree. This then go through a process of 'Layout'. It is during this process, the exact size and location of a node is assigned to create the desired output.
+
+The next stage is 'Painting' - the render tree will be traversed and each node will be painted using the UI Backend layer.
+
