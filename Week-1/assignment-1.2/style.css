@@ -1,0 +1,43 @@
+* {
+    border:1px solid red !important;
+}
+
+html, body {
+    height: 100%;
+}
+
+nav {
+    background-color: blue;
+    height: 40px;
+}
+
+nav a, nav a i {
+    padding: 10px;
+}
+
+header div {
+    background-color: rgb(85, 82, 82);
+    display: inline-block;
+}
+
+#header-img {
+    margin: 50px;
+}
+
+table {
+    width: 100%;
+}
+
+footer {
+    background-color: grey;
+    padding: 20px;
+}
+
+footer img {
+    height: 100px;
+    width: 100px;
+}
+
+footer div {
+    display: inline-block;
+}
