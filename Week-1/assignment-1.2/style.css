@@ -4,15 +4,26 @@
 
 html, body {
     height: 100%;
+    margin-top: 0px;
+    margin-left: 0px;
 }
 
 nav {
     background-color: blue;
-    height: 40px;
+    /* width: 60px; */
+    height: 90%;
+    width: 70px;
+    display: inline-block;
+    position: fixed;
 }
 
 nav a, nav a i {
     padding: 10px;
+    display: block;
+}
+
+header, article {
+    margin-left: 70px;
 }
 
 header div {
@@ -21,21 +32,32 @@ header div {
 }
 
 #header-img {
-    margin: 50px;
+    padding: 20px 50px;
+    /* height: 200px;
+    width: 200px; */
 }
 
 table {
     width: 100%;
 }
 
+th:nth-child(2) {
+    background-color: aqua;
+    
+}
+
 footer {
     background-color: grey;
     padding: 20px;
+    bottom: 10px;
+    position: fixed;
+    width: 100%;
+    height: 10%;
 }
 
 footer img {
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
 }
 
 footer div {
