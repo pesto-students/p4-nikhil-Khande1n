@@ -1,4 +1,4 @@
-##Week1 Assignment 1
+# Week1 Assignment 1
 
 Pesto- Week 1 Assignment 1 - HTML
 
@@ -46,7 +46,7 @@ TCP/IP is a protocol over which data is transferred over the web
 4. The browser on receiving the data, browser on parsing HTML structure, CSS styles and JS scripts, render the website/image/content on the browser
 
 ### Key Components of a web browser
-<img src="../assests/how_browser_works.png>
+![how_browser_works](https://user-images.githubusercontent.com/15044489/180613823-fad90d34-4e0a-4e1d-a543-b9dc412e5fde.png)
 
 # List of components
 1. User Interface
@@ -87,20 +87,21 @@ This component is responsible for persisting(saving) the data on the browser abo
 ### Rendering is a key part what browser works. Let's deep dive
 Rendering engine get all the resources through the HTTP/HTTPS calls over internet via networking layer. The below diagram tell the workflow of the rendering engine - 
 
-<img src="../assests/rendering_engine_workflow.png">
+![rendering_engine_workflow](https://user-images.githubusercontent.com/15044489/180613828-9bc514bb-6381-4b53-86fa-249a3a469d67.png)
 
 As soon as this engine starts receiving the document, the HTML parser tokenizes the elements, which contains start tag , end tag, attributes and values, into a DOM Tree. The HTML parser does this via two key process:
 - Lexical Analysis - it tokenizes the documents
 - Syntax Analysis - it applies language specific syntax
 
-<img src="../assests/lexer-parser.pmg">
+![lexer-parser](https://user-images.githubusercontent.com/15044489/180613827-d849e1ea-56b5-4106-8c96-f805ff8b3e60.png)
 
 The parser keeps asking the Lexer for the token and keep those in the memory, and as soon as it gets something connected to token in memory, creates the tree.
 
 The process of creation of tree goes on even when the parser gets CSS elements through various style sheets. With the CSS elements, parser creates CSSOM tree and the render engine then creates a Render Tree based on them. 
 
 '<script/>' tag can block the parsing of HTML and stop the rendering process, if 'async' or 'defer' attribute not mentioned. JS interpretation is done during compile time or whenever a parser is invoked. Please see the image below:
-<img src="../assests/scripts_updating_token.png">
+
+![script_updating_token](https://user-images.githubusercontent.com/15044489/180613829-e3eac23e-ea9f-44f6-9639-8c0f5e2861f2.png)
 
 Now the rendering engine with the help of both DOM and CSSOM, creates a Render Tree. This then go through a process of 'Layout'. It is during this process, the exact size and location of a node is assigned to create the desired output.
 
