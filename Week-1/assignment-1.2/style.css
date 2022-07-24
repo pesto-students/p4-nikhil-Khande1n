@@ -1,5 +1,6 @@
 * {
     border:1px solid red !important;
+    font-family: 'Lato', sans-serif;
 }
 
 html, body {
@@ -17,12 +18,18 @@ nav {
     position: fixed;
 }
 
-nav a, nav a i {
-    padding: 10px;
+nav > a {
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+nav a, nav a > i {
+    height: 24px;
+    width: 24px;
     display: block;
 }
 
-header, article {
+header, main {
     margin-left: 70px;
 }
 
@@ -32,9 +39,13 @@ header div {
 }
 
 #header-img {
-    padding: 20px 50px;
+    padding: 20px 20px;
     /* height: 200px;
     width: 200px; */
+}
+
+#header-details {
+    
 }
 
 table {
