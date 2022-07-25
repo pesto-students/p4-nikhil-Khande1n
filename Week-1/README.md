@@ -107,3 +107,9 @@ Now the rendering engine with the help of both DOM and CSSOM, creates a Render T
 
 The next stage is 'Painting' - the render tree will be traversed and each node will be painted using the UI Backend layer.
 
+### Credits
+- https://web.dev/howbrowserswork/
+- https://www.youtube.com/watch?v=SmE4OwHztCc&ab_channel=JSConf
+- https://www.youtube.com/watch?v=0IsQqJ7pwhw&t=2s&ab_channel=JSConf
+
+
