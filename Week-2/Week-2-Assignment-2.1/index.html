@@ -17,7 +17,7 @@
         <div>
             <a>
                 <figure>
-                    <img src="./assests/logo-with-name.png">
+                    <img src="./assests/logo-with-name.png" alt="company logo image">
                 </figure>
             </a>
         </div>
@@ -29,26 +29,28 @@
         <div>
             <a>
                 <figure>
-                    <img src="./assests/nav-menu-burger.png">
+                    <img src="./assests/nav-menu-burger.png" alt="nav hamburger menu image">
                 </figure>
             </a>
         </div>
     </nav>
     <article>
-        <article>
-            <header>
-                <h1>Let’s convert your ideas to digital Products.</h1>
-            </header>
-            <main>
-                <p>We help build and manage a team of world-class developers to bring your vision to life</p>
-                <button>
-                    Let's Discuss
-                    <img src="./assests/arrow-right.png">
-                </button>
-            </main>
-            <figure>
-                <img src="./assests/hero-section-image.png">
-            </figure>
+        <article class="hero-section">
+            <div class="hero-section-detail">
+                <header class="hero-section-header" >
+                    <h1>Let’s convert your ideas to digital Products.</h1>
+                    <p>We help build and manage a team of world-class developers to bring your vision to life</p>
+                    <button class="lets-talk-button">
+                        Let's Discuss
+                        <img src="./assests/arrow-right.png" alt="right arrow image">
+                    </button>
+                </header>
+                <main class="hero-section-image">
+                    <figure>
+                        <img src="./assests/hero-section-image.png" alt="woman image writting on tab">
+                    </figure>
+                </main>
+            </div>
             <footer>
                 <h1>Loved by teams and companies you know</h1>
                 <figure>
@@ -59,35 +61,160 @@
                     <img src="./assests/client-codelab.png">
                 </figure>
             </footer>
-            <a href="#"></a>
         </article>
-        <article>
-            <h1>
-
-            </h1>
-            <summary>
-
-            </summary>
-            <a href="#"></a>
+        <article class="strength-section">
+            <header>
+                <h1>
+                    Fuel Your Projects with an expert team of industry focused engineers
+                </h1>
+                <p>
+                    For over a decade, we have developed thousands of outstanding projects that have <br>
+                    helped our customers accomplish their business goals.
+                </p>
+            </header>
+            <main>
+                <figure>
+                    <img src="./assests/extensive-experience.png" alt="extensive experience image">
+                </figure>
+                <figure>
+                    <img src="./assests/industry-especialist.png" alt="industry specialist image">
+                </figure>
+                <figure>
+                    <img src="./assests/customer-loyality.png" alt="customer loyality image">
+                </figure>
+            </main>
         </article>
-        <article>
-            <h1>
-
-            </h1>
-            <summary>
-
-            </summary>
-            <a href="#"></a>
+        <article class="talk-to-us">
+            <header>
+                <h1>You need a team with extensive experience Building Products. That’s us!</h1>
+                <p>Andersen assists businesses across major industries, addressing <br>
+                    complex problems with technological solutions. <br>
+                    By using industry-specific knowledge, our expert team tailors IT tools <br>
+                    to meet the unique needs of each customer.</p>
+                <button class="lets-talk-button">
+                    Let's Discuss
+                    <img src="./assests/arrow-right.png" alt="right arrow image">
+                </button>
+            </header>
+            <main>
+                <figure>
+                    <img src="./assests/talk-to-us.png" alt="talk to us image">
+                </figure>
+            </main>
         </article>
     </article>
-    <section>
-        <h1>Contact Us</h1>
-        <form>
-            <input>
+    <section class="form-submit-section">
+        <h1>Let’s Work Together.</h1>
+        <p>we’d love to meet up with you to discuss your venture, <br>
+            and potential collaborations.
+        </p>
+        <form action="/post/user">
+            <!-- <br> -->
+            <label for="firstName">
+                First Name: <input name="firstName" value="" type="text">
+            </label>
+            <!-- <br> -->
+            <label for="lastName">
+                Last Name: <input name="lastName" value="" type="text">
+            </label>
+            <!-- <br> -->
+            <label for="email">
+                Email: <input name="email" value="" type="email">
+            </label>
+            <!-- <br> -->
+            <label for="phoneNumber">
+                Phone number: <input name="phoneNumber" value="" type="number">
+            </label>
+            <!-- <br> -->
+            <label for="password">
+                Password: <input name="password" value="" type="password">
+            </label>
+            <!-- <br> -->
+            <label for="confirmPassword">
+                Confirm your password: <input name="confirmPassword" value="" type="password">
+            </label>
+            <!-- <br> -->
+            <label for="title">
+                Title: 
+                <div>
+                    <input id="Mr" name="title" value="Mr" type="radio">
+                    <label for="MR">MR</label>
+                </div>
+                <div>
+                    <input id="Mrs" name="title" value="Mrs" type="radio">
+                    <label for="Mrs">Mrs</label>
+                </div>
+                <div>
+                    <input id="Miss" name="title" value="Miss" type="radio">
+                    <label for="Miss">Miss</label>
+                </div>
+            </label>
+            <!-- <br> -->
+            <label for="country">
+                Country:
+            </label>
+            <select name="countries" id="country">
+                <option value="">--Please choose an option--</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <option value="Malasia">Malasia</option>
+                <option value="Singapore">Singapore</option>
+            </select>
+            <!-- <br> -->
+            <label for="termsAndCondition">
+                <input type="checkbox" id="termsAndCondition" name="termsAndCondition" value="">
+                I agree to the <a href="https://www.google.com">terms and conditions</a>
+            </label>
+            <!-- <br> -->
+            <button type="submit">Sign Up</button>
         </form>
     </section>
-    <footer>
-
+    <footer class="page-footer">
+        <div class="page-footer-details">
+            <article>
+                <a>
+                    <figure>
+                        <img src="./assests/logo-with-name.png" alt="company logo image">
+                    </figure>
+                </a>
+            </article>
+            <article>
+                <h1>Project</h1>
+                <p>sldkfj</p>
+                <p>sldkfj</p>
+                <p>sldkfj</p>
+                <p>sldkfj</p>
+                <p>sldkfj</p>
+                <p>sldkfj</p>
+            </article>
+            <article>
+                <h1>Tech Stack</h1>
+                <p>sldkfj</p>
+                <p>sldkfj</p>
+                <p>sldkfj</p>
+                <p>sldkfj</p>
+                <p>sldkfj</p>
+                <p>sldkfj</p>
+            </article>
+            <article>
+                <h1>Services</h1>
+                <p>sldkfj</p>
+                <p>sldkfj</p>
+                <p>sldkfj</p>
+                <p>sldkfj</p>
+                <p>sldkfj</p>
+            </article>
+        </div>
+        <hr>
+        <div class="page-footer-links">
+            <p>2022 Sthambh</p>
+            <p><a>Terms</a></p>
+            <p><a>Privacy Policy</a></p>
+            <img src="./assests/facebook.png" alt="facebook icon">
+            <img src="./assests/dribbble.png" alt="dribble icon">
+            <img src="./assests/whatsapp.png" alt="whatsapp icon">
+            <img src="./assests/instagram.png" alt="instagram icon">
+        </div>
     </footer>
 </body>
 </html>

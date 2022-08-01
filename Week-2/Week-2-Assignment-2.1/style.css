@@ -14,3 +14,112 @@
     display: flex;
     justify-content: space-between;
 }
+
+.hero-section-detail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hero-section-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-section-header h1 {
+    font-size: 4em;
+    font-weight: 600;
+}
+
+.hero-section-header p {
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.lets-talk-button {
+    background-color: #FFDB00;
+    box-shadow: 0px 4px 50px 0px #FF672633;
+    border-radius: 20px;
+    height: 80px;
+    width: 252px;
+    font-size: 18px;
+    font-weight: 500;
+    border-color: #FFDB00;
+}
+
+.hero-section footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-section footer h1 {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.strength-section {
+    background: #121D2F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.strength-section figure {
+    display: inline-block;
+}
+
+.talk-to-us {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.form-submit-section {
+    background-color: #121D2F;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-submit-section form {
+    background-color: #212f2f;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+
+form label {
+    padding-bottom: 1em;
+}
+
+.page-footer {
+    background-color: #ffd900;
+}
+
+.page-footer-details {
+    padding-top: 5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.page-footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-footer-links p, img {
+    padding-right: 2em;
+}
+
+.page-footer-links img {
+    height: 2em;
+    width: 2em;
+}
