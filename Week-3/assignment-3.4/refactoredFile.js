@@ -1,13 +1,14 @@
 function createStack() {
-    let that = {};
-    // console.log(that, "that");
-    that.items = [];
+    let items = [];
+    let itemAtTop;
     return {
-        push(item) {
-            that.items.push(item);
+        push: (item) => {
+            itemAtTop = item;
+            items.push(item);
         },
-        pop() {
-            return that.items.pop();
+        pop: () => {
+            items.length -= 1;
+            return itemAtTop;
         }
     };
 }
