@@ -1,5 +1,6 @@
-// Reducer function
+const cacheMap = new Map();
 
+// Reducer function
 function add(numbersArr) {
     let sum = 0;
     for (n in numbersArr) {
@@ -9,16 +10,14 @@ function add(numbersArr) {
 }
 
 const memoized = function(func) {
-    let cache = {};
     return function(...args) {
-        // console.log(args, "args");
-        let obj = args;
-        if (obj in cache) {
-            console.log("returned from cache");
-            return cache[obj];
+        const obj = args;
+        if (cacheMap[obj]) {
+            console.log("returned from cacheMap");
+            return cacheMap[obj];
         } else {
-            cache[obj] = func(obj);
-            return cache[obj];
+            cacheMap[obj] = func(obj);
+            return cacheMap[obj];
         }
     }
 }
