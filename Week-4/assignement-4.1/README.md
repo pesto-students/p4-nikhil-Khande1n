@@ -3,7 +3,7 @@
 ## Exercise4.
 
 ### Scope
-1:Implement a function namedget Number which generatesa random number. If random Numberis divisible by 5 it will reject the promise else it will resolve the promise. Let’s also keep thepromise resolution/rejection time as a variable.
+1:Implement a function named getNumber which generates a random number. If random Number is divisible by 5 it will reject the promise else it will resolve the promise. Let’s also keep the promise resolution/rejection time as a variable.
     1.JS promises should not be used.
     2.A custom promise function should be created.
     3.This function should be able to handle all 3 states Resolve, Reject and Fulfilled.
